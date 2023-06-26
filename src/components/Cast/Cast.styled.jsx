@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const StyledCast = styled.ul`
     display: grid;
-    justify-items: center;
+    justify-items: start;
     max-width: calc(100vw - 48px);
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 16px;
@@ -12,4 +12,8 @@ export const StyledCast = styled.ul`
     list-style: none;
     margin-left: auto;
     margin-right: auto;
+`
+export const StyledImg = styled.img`
+    border: 1px solid transparent;
+    border-radius: 10px;
 `

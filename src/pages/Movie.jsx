@@ -22,7 +22,9 @@ const Movie = () => {
         async function getMovie() {
             try {
                 const { data: { title, poster_path, genres, overview, vote_average } } = await axios.get(`${URL}movie/${movieId}?api_key=${API_KEY}`);
-                setImage(`https://image.tmdb.org/t/p/w300${poster_path}`);
+                if (poster_path) {
+                    setImage(`https://image.tmdb.org/t/p/w200${poster_path}`);
+                }
                 setTitle(title);
                 setGenres(genres);
                 setOverview(overview);

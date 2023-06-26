@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { NavLinkList } from "./Layout.styled";
+import { NavLinkList, StyledNavLink } from "./Layout.styled";
 import { Loader } from "./Loader/Loader";
 
 export const SharedLayout = () => {
@@ -9,16 +9,16 @@ export const SharedLayout = () => {
             <header>
                 <NavLinkList>
                     <li>
-                        <NavLink
+                        <StyledNavLink
                             to='/'>
                             Home
-                        </NavLink>
+                        </StyledNavLink>
                     </li>
                     <li>
-                        <NavLink
+                        <StyledNavLink
                             to='/movies'>
                             Movies
-                        </NavLink>
+                        </StyledNavLink>
                     </li>
                 </NavLinkList>
             </header>

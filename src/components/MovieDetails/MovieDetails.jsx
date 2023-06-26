@@ -1,15 +1,15 @@
 import { nanoid } from "nanoid";
-import { StyledMovieDetails } from "./MovieDetails.styled";
+import { StyledMovieDetails, MovieDiscription, MovieImg, StyledGenresList } from "./MovieDetails.styled";
 
 export const MovieDetails = ({ src, alt, title, score, overview, genres }) => {
     return (
         <>
             <StyledMovieDetails>
-                <img
+                <MovieImg
                     src={src}
                     alt={alt}
                 />
-                <div>
+                <MovieDiscription>
                     <h3>
                         {title}
                     </h3>
@@ -26,14 +26,16 @@ export const MovieDetails = ({ src, alt, title, score, overview, genres }) => {
                     <h5>
                         Genres
                     </h5>
-                    {genres.map(genre =>
-                        <p
+                    <StyledGenresList>
+                        {genres.map(genre =>
+                        <li
                             key={nanoid()}
                         >
                             {genre.name}
-                        </p>)
+                        </li>)
                     }
-                </div>
+                    </StyledGenresList>
+                </MovieDiscription>
             </StyledMovieDetails>        
         </>
     )

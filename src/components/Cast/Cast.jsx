@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { URL, API_KEY } from "helpers";
-import { StyledCast } from "./Cast.styled";
+import { StyledCast, StyledImg } from "./Cast.styled";
 
 const Cast = () => {
     const params = useParams();
     const { movieId } = params;
     const [cast, setCast] = useState([]);
+    // const [error, setError] = useState(null);
 
     useEffect(() => {
         async function getCast() {
@@ -26,9 +27,11 @@ const Cast = () => {
         <StyledCast>
             {cast && cast.map(castItem =>
                 <li key={castItem.id}>
-                    <img
+                    {castItem.profile_path
+                    ? (< StyledImg
                         src={`https://image.tmdb.org/t/p/w200${castItem.profile_path}`}
-                        alt={castItem.name} />
+                            alt={castItem.name} />)
+                    : <p>{'Image not found'}</p>}
                     <p>{castItem.name}</p>
                     <p>{castItem.character}</p>
                 </li>
