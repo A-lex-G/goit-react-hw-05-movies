@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[805],{9805:function(e,t,r){r.r(t);var o=r(184);t.default=function(){return(0,o.jsx)("p",{children:"Given the incorrect path You've been redirected to Homepage. You may click 'Home' or 'Movies' link to restart your search..."})}}}]);
+//# sourceMappingURL=805.7060187d.chunk.js.map
