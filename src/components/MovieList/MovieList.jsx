@@ -8,7 +8,8 @@ export const MoviesList = ({ trendingMovies, selectedMovies }) => {
     return (
         <StyledList>
 
-            {trendingMovies && trendingMovies.map(movie =>
+            {trendingMovies
+                ? (trendingMovies.map(movie =>
                 <li
                     key={movie.id}> 
                     <Link
@@ -17,9 +18,8 @@ export const MoviesList = ({ trendingMovies, selectedMovies }) => {
                         {movie.title}
                     </Link>
                 </li>
-            )}
-
-            {selectedMovies && selectedMovies.map(movie =>
+                ))
+                : (selectedMovies.map(movie =>
                 <li
                     key={movie.id}> 
                     <Link
@@ -27,7 +27,7 @@ export const MoviesList = ({ trendingMovies, selectedMovies }) => {
                         state={{ from: location }}>
                         {movie.title}
                     </Link>
-                </li>)}
+                </li>))}
             
         </StyledList>
     )
